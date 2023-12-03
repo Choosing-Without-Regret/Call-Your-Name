@@ -1,38 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <style>
-        form {
-            display: inline-block;
-            margin-right: 10px; 
-        }
-        input[type="text"] {
-            width: 300px; 
-        }
-       
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理想の自分</title>
 </head>
-<body>
-    <h1>やるべきこと</h1>
-    <form action="/add" method="post">
-        <input type="text" name="task" placeholder="タスク入力">
-        <button type="submit">追加</button>
-    </form>
 
-    <ul>
-        {% for todo in todos %}
-            <li>
-                {{ todo[1] }}
-                <form action="/edit/{{ todo[0] }}" method="get">
-                    
-                    <button type="submit">変更</button>
-                    
-                </form>
-                <form action="/delete/{{ todo[0] }}" method="post">
-                    <button type="submit">削除</button>
-                </form>
-               
-            </li>
-        {% endfor %}
-    </ul>
+<body>
+    <h1>理想の自分を入力してください！</h1>
+    <form method="post" action="/">
+        <label for="ideal_self">理想の自分:</label>
+        <input type="text" id="ideal_self" name="ideal_self" required>
+        <button type="submit">送信</button>
+    </form>
 </body>
+
 </html>
