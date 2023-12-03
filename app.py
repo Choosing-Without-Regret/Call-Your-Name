@@ -9,6 +9,8 @@ def create_table():
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS todos
                  (id INTEGER PRIMARY KEY AUTOINCREMENT, task TEXT, completed BOOLEAN)''')
+    
+   
     conn.commit()
     conn.close()
 
@@ -54,7 +56,6 @@ def edit(task_id):
     todo = c.fetchone()
     conn.close()
     return render_template('edit.html', todo=todo)
-
 
 @app.route('/update/<int:task_id>', methods=['POST'])
 def update(task_id):
