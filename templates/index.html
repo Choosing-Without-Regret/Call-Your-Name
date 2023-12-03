@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Todo List</title>
+    <style>
+        form {
+            display: inline-block;
+            margin-right: 10px; 
+        }
+        input[type="text"] {
+            width: 300px; 
+        }
+       
+
+    </style>
 </head>
 <body>
-    <h1>Todo List</h1>
+    <h1>やるべきこと</h1>
     <form action="/add" method="post">
-        <input type="text" name="task" placeholder="タスクを入力してください">
+        <input type="text" name="task" placeholder="タスク入力">
         <button type="submit">追加</button>
-        <form action="/update/{{ todo_id }}" method="post">
-            <input type="text" name="edited_task" placeholder="編集内容を入力してください">
-            <button type="submit">更新</button>
-        </form>
     </form>
-    
+
     <ul>
         {% for todo in todos %}
-            <li>{{ todo[1] }}
+            <li>
+                {{ todo[1] }}
                 <form action="/edit/{{ todo[0] }}" method="get">
-                    <button type="submit">編集</button>
+                    
+                    <button type="submit">変更</button>
+                    
                 </form>
                 <form action="/delete/{{ todo[0] }}" method="post">
                     <button type="submit">削除</button>
                 </form>
+               
             </li>
         {% endfor %}
     </ul>

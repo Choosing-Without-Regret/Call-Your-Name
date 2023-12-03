@@ -3,7 +3,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Database initialization
+
 def create_table():
     conn = sqlite3.connect('todo.db')
     c = conn.cursor()
@@ -14,7 +14,7 @@ def create_table():
 
 create_table()
 
-# Route for displaying all tasks
+
 @app.route('/')
 def index():
     conn = sqlite3.connect('todo.db')
@@ -24,7 +24,7 @@ def index():
     conn.close()
     return render_template('index.html', todos=todos)
 
-# Route for adding a new task
+
 @app.route('/add', methods=['POST'])
 def add():
     task = request.form['task']
@@ -55,7 +55,7 @@ def edit(task_id):
     conn.close()
     return render_template('edit.html', todo=todo)
 
-# 更新用のルートを追加
+
 @app.route('/update/<int:task_id>', methods=['POST'])
 def update(task_id):
     edited_task = request.form['edited_task']

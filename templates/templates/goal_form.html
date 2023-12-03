@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目標の設定</title>
+</head>
+
+<body>
+    <h1>「{{ ideal_self }}」になるためにはどんな目標を設定しますか？</h1>
+    <form method="post" action="/process_goal">
+        <label for="goal">目標:</label>
+        <input type="text" id="goal" name="goal" required>
+        <button type="submit">送信</button>
+    </form>
+</body>
+
+</html>

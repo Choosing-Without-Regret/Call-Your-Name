@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サブゴールの設定</title>
+</head>
+
+<body>
+    <h1>「{{ goal }}」を達成するための一つの具体的な目標は何ですか？</h1>
+    <form method="post" action="/process_subgoal">
+        <label for="subgoal">サブゴール:</label>
+        <input type="text" id="subgoal" name="subgoal" required>
+        <button type="submit">送信</button>
+    </form>
+</body>
+
+</html>

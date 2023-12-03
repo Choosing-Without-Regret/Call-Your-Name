@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+</head>
+<body>
+    <h1>Edit Task</h1>
+    <form action="/update/{{ todo[0] }}" method="post">
+        <input type="text" name="edited_task" placeholder="Edit task">
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
