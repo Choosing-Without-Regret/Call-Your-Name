@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>削除</title>
+</head>
+<body>
+    <h1>削除</h1>
+    <p>Are you sure you want to delete this task?</p>
+    <form action="/delete/{{ todo[0] }}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
